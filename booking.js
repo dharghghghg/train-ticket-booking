@@ -1,3 +1,10 @@
+window.addEventListener("DOMContentLoaded", function () {
+  const isLoggedIn = localStorage.getItem("isLoggedIn");
+
+  if (isLoggedIn !== "true") {
+    openPopupsignup();
+  }
+});
 document.addEventListener("DOMContentLoaded", () => {
     let name = localStorage.getItem("trainname");
     let num = localStorage.getItem("trainnum");
@@ -111,4 +118,5 @@ function confirmbooking() {
     localStorage.setItem("ticket", passengerCount);
     window.location.href = "confirmbooking.html";
 }
+
 
