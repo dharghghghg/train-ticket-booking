@@ -1,0 +1,489 @@
+:root {
+    --dark-text: #1a2332;
+    --danger-red: #dc3545;
+    --light-blue: #e6f0ff;
+    --light-text: #666;
+    --orange: #ff6b35;
+    --primary-blue: #1a4d8f;
+    --secondary-blue: #2563a8;
+    --success-green: #28a745;
+    --white: #ffffff;
+}
+
+/* ======== GENERAL BUTTON ======== */
+button {
+    font-size: 16px;
+    padding: 8px 15px;
+}
+
+/* ======== BOOKINGS PAGE ======== */
+.booking-card {
+    background: #ffffff;
+    border: 2px solid #1a4d8f;
+    border-radius: 15px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    padding: 20px 25px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.booking-card:hover {
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+    transform: translateY(-5px);
+}
+
+.booking-details p {
+    color: #333;
+    font-size: 16px;
+    margin: 6px 0;
+}
+
+.booking-header {
+    align-items: center;
+    border-bottom: 2px solid #e0e0e0;
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 10px;
+    padding-bottom: 8px;
+}
+
+.booking-header h3 {
+    color: #1a4d8f;
+    font-size: 22px;
+    margin: 0;
+}
+
+.bookings-container {
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+    margin: 30px auto;
+    max-width: 1000px;
+    padding: 10px;
+}
+
+.class-grid {
+    display: grid;
+    gap: 10px;
+    grid-template-columns: repeat(4, 1fr);
+    height: 80px;
+    margin: 20px auto;
+    max-width: 500px;
+    text-align: left;
+}
+
+.class-grid div {
+    background-color: #f8faff;
+    border: 2px solid #1a4d8f;
+    border-radius: 6px;
+    color: #1a4d8f;
+    font-size: 16px;
+    font-weight: bold;
+    padding: 10px 10px;
+    transition: 0.3s;
+}
+
+.class-grid div:hover {
+    background-color: #1a4d8f;
+    color: white;
+    cursor: pointer;
+}
+
+/* ======== CONFIRM BOOKING PAGE ======== */
+
+#btnn {
+    background: #1e88e5;
+    border: none;
+    border-radius: 10px;
+    color: white;
+    cursor: pointer;
+    font-size: 18px;
+    font-weight: 600;
+    margin-top: 15px;
+    padding: 10px 18px;
+    transition: 0.3s;
+}
+
+#btnn:hover {
+    background: #0d47a1;
+    transform: scale(1.05);
+}
+
+#cb {
+    color: #1a237e;
+    font-size: 30px;
+    font-weight: 700;
+    margin-top: 20px;
+    text-align: center;
+}
+
+#coach,
+#coachh,
+#coachp,
+#ticket,
+#ticketfare,
+#trainname,
+#trainnum {
+    color: #0d47a1;
+    font-size: 20px;
+    font-weight: 700;
+    padding: 8px 0;
+}
+
+#trainname {
+    color: #1067d9;
+    font-size: 24px;
+}
+
+.confirmdiv {
+    animation: fadeIn 0.4s ease-in-out;
+    background: #ffffff;
+    border-radius: 15px;
+    box-shadow: 0 8px 25px rgba(0,0,0,0.15);
+    margin: 20px auto;
+    padding: 25px;
+    width: 80%;
+    text-align: center;
+}
+
+/* Passenger container */
+#passengerDetails {
+    display: block !important;
+}
+
+.passenger-card {
+    background: #f0f4ff;
+    border-left: 5px solid #3b6cff;
+    border-radius: 10px;
+    display: block !important;
+    margin-bottom: 15px;
+    padding: 15px;
+    width: 100% !important;
+}
+
+.passenger-card:hover {
+    transform: translateY(-4px);
+}
+
+.passenger-card h3 {
+    color: #1a237e;
+    font-size: 22px;
+    margin-top: 0;
+}
+
+.passenger-card p {
+    color: #424242;
+    font-size: 16px;
+    font-weight: 500;
+    margin: 5px 0;
+}
+
+/* popup success box */
+.popup-bg-book {
+    background: rgba(0,0,0,0.5);
+    display: none;
+    height: 100%;
+    left: 0;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 1000;
+}
+
+.popup-box-book {
+    background: #ffffff;
+    border-radius: 15px;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+    padding: 25px;
+    text-align: center;
+    width: 350px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.popup-box-book h3 {
+    color: #2e7d32;
+    font-size: 24px;
+}
+
+/* LOGIN + SIGNUP POPUPS */
+input {
+    margin: 8px 0;
+    padding: 5px;
+    width: 90%;
+}
+
+.popup-bg {
+    background: rgba(0,0,0,0.5);
+    display: none;
+    height: 100%;
+    left: 0;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 1000;
+}
+
+.popup-bg-signup {
+    background: rgba(0,0,0,0.5);
+    display: none;
+    height: 100%;
+    left: 0;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 1000;
+}
+
+.popup-box {
+    background: white;
+    border-radius: 20px;
+    height: 300px;
+    margin: 200px auto;
+    padding: 20px;
+    text-align: center;
+    width: 300px;
+    z-index: 100;
+}
+
+.popup-box-signup {
+    background: white;
+    border-radius: 20px;
+  
+    margin: 200px auto;
+    padding: 10px;
+    text-align: center;
+    width: 300px;
+    z-index: 100;
+}
+#otpPopuo{
+     height: 200px;
+}
+
+/* PNR badge */
+.pnr {
+    background: #ff6b35;
+    border-radius: 8px;
+    color: white;
+    font-size: 14px;
+    font-weight: bold;
+    padding: 5px 12px;
+}
+
+/* No bookings text */
+.no-bookings {
+    color: #777;
+    font-size: 18px;
+    margin-top: 40px;
+    text-align: center;
+}
+
+/* ======== SEARCH PAGE ======== */
+
+.searchdiv {
+    animation: fadeIn 0.7s ease;
+    background: linear-gradient(135deg, #e6f0ff, #ffffff);
+    border: none;
+    border-radius: 20px;
+    box-shadow: 0 10px 25px rgba(26, 77, 143, 0.2);
+    margin: 60px auto;
+    max-width: 1200px;
+    padding: 40px 30px;
+    text-align: center;
+}
+
+.searchdiv form {
+    align-items: center;
+    display: flex;
+    flex-direction: row;
+    gap: 20px;
+}
+
+.searchdiv h1 {
+    color: var(--primary-blue);
+    font-size: 28px;
+    font-weight: 700;
+    letter-spacing: 1px;
+    margin-bottom: 25px;
+    text-shadow: 1px 1px 2px rgba(26,77,143,0.2);
+}
+
+.searchdiv h2 {
+    color: var(--dark-text);
+    font-size: 18px;
+    margin-bottom: 10px;
+}
+
+.searchdiv select {
+    background-color: #f9fcff;
+    border: none;
+    border-radius: 12px;
+    box-shadow: 0 3px 8px rgba(26, 77, 143, 0.1);
+    color: var(--primary-blue);
+    cursor: pointer;
+    font-size: 16px;
+    padding: 10px 15px;
+    text-align: center;
+    transition: all 0.3s ease;
+    width: 250px;
+}
+
+.searchdiv select:hover {
+    background: #e6f0ff;
+    box-shadow: 0 6px 15px rgba(26, 77, 143, 0.2);
+    transform: scale(1.03);
+}
+
+/* BUTTON */
+#btn {
+    background: var(--orange);
+    border: none;
+    border-radius: 12px;
+    box-shadow: 0 5px 15px rgba(255, 107, 53, 0.4);
+    color: white;
+    cursor: pointer;
+    font-size: 18px;
+    font-weight: 600;
+    margin-top: 30px;
+    padding: 12px 30px;
+    transition: all 0.3s ease;
+}
+
+#btn:hover {
+    background: var(--primary-blue);
+    box-shadow: 0 10px 25px rgba(26, 77, 143, 0.4);
+    transform: translateY(-3px);
+}
+
+/* Train box */
+.train1,
+.train2 {
+    background-color: whitesmoke;
+    border: 2px solid blue;
+    border-radius: 20px;
+    height: 300px;
+    margin: 10px auto;
+    max-width: 1000px;
+    padding: 40px 20px;
+}
+
+/* Fade animation */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(15px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+/* Profile container */
+.profile-container {
+    position: relative;
+    display: none; /* hidden until login */
+}
+
+.profile-icon {
+    width: 35px;
+    height: 35px;
+    border-radius: 50%;
+    cursor: pointer;
+}
+
+/* Dropdown */
+.profile-dropdown {
+    display: none;
+    position: absolute;
+    top: 40px;
+    right: 0;
+    background: white;
+    padding: 12px;
+    border-radius: 12px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+    width: 180px;
+    z-index: 1000;
+    text-align: left;
+}
+
+.profile-dropdown p {
+    margin: 5px 0;
+    font-size: 15px;
+    color: #1a4d8f;
+}
+
+.profile-dropdown button {
+    background: #dc3545;
+    color: white;
+    border: none;
+    padding: 6px 12px;
+    width: 100%;
+    margin-top: 8px;
+    border-radius: 8px;
+    cursor: pointer;
+}
+
+/* Show dropdown on hover */
+.profile-container:hover .profile-dropdown {
+    display: block;
+}
+.info-line {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    margin-bottom: 15px;
+}
+
+.city {
+    font-size: 22px;
+    font-weight: 600;
+    color: #1a4d8f;
+    text-transform: uppercase; /* makes CITY NAME uppercase */
+}
+
+.train-header {
+    display: flex;
+    justify-content: space-between;  /* places items left and right */
+    align-items: center;
+    width: 100%;
+}
+
+.date-right {
+    font-size: 20px;
+    font-weight: 600;
+    color:var(--primary-blue);
+}
+
+.journey-date {
+    color: #eb9c48;
+    font-weight: 600;
+    font-size: 16px;
+}
+.booking-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.city-line {
+  font-size: 18px;
+  color: #1a4d8f;
+  font-weight: 600;
+  margin-top: -10px;
+}
+
+.train-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+}
+
+.time-right {
+    font-size: 20px;
+    font-weight: 600;
+    color: #eb9c48;
+}
+
