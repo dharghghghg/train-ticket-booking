@@ -50,8 +50,8 @@
     <div class="popup-bg" id="popup">
   <div class="popup-box">
     <h3>Login</h3>
-    <input type="text" id="loginUsername" placeholder="Username"><br>
-    <input type="password" id="loginPassword" placeholder="Password"><br>
+    <input type="text" id="loginUsername" placeholder="Enter Username"><br>
+    <input type="password" id="loginPassword" placeholder="Enter Password"><br>
     <button id="btnn" onclick="loginUser()">Login</button>
     <button id="btnn" onclick="closePopup()">Close</button><br><br>
     <button id="btnn" onclick="openPopupsignup()">Sign Up</button>
@@ -97,7 +97,7 @@
             <div class="train-header">
         <h1 id="trainname"></h1>
         <span id="tdate" class="date-right"></span>
-    </div>
+        </div>
             <h3 id="trainnum"></h3>
             <h3 id="coachh"></h3>
             <h3 id="coachp"></h3>
@@ -108,7 +108,7 @@
                 </div>
 
             <button onclick="addPassenger()" class="btn btn-primary" style="margin-right: 10px; margin-top: 10px;">Add Passenger</button>
-            <button onclick="removeLastPassenger()" class="btn btn-danger" style="margin-right: 10px; margin-top: 10px;">Remove Passenger</button>
+            <button onclick="removeLastPassenger()" class="btn btn-primary" style="margin-right: 10px; margin-top: 10px;background-color:red">Remove Passenger</button>
             <button onclick="confirmbooking()" class="btn btn-success" style="margin-top: 10px;">Confirm</button>
         </div>
 
@@ -119,7 +119,7 @@
             <ul class="footer-links">
                 <li><a href="index.html">Home</a></li>
                 <li><a href="search.html">Search Trains</a></li>
-                <li><a href="bookings.html">My Bookings</a></li>
+                <li><a href="mybooking.html">My Bookings</a></li>
                 <li><a href="contact.html">Contact</a></li>
             </ul>
             <p>&copy; 2025 | Railway Management System |</p>    
@@ -129,5 +129,4 @@
     <script src="auth.js"></script>
    
 </body>
-
 </html>
