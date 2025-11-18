@@ -8,8 +8,10 @@ window.addEventListener("DOMContentLoaded", function () {
 
 document.addEventListener("DOMContentLoaded", () => {
   const container = document.getElementById("myBookingsContainer");
+  if (isLoggedIn !== "true") {
+  localStorage.setItem("allBookings", JSON.stringify([]));
+  }
   const allBookings = JSON.parse(localStorage.getItem("allBookings")) || [];
-
   if (allBookings.length === 0) {
     container.innerHTML = "<p>No bookings yet.</p>";
     return;
@@ -45,3 +47,4 @@ document.addEventListener("DOMContentLoaded", () => {
   });
 });
 console.log(JSON.parse(localStorage.getItem("allBookings"))[3]);
+
