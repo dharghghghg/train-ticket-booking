@@ -1,16 +1,21 @@
+
 let name = localStorage.getItem("trainname");
         let num =localStorage.getItem("trainnum");
         let coach=localStorage.getItem("coach");
          coachp=localStorage.getItem("coachprice");
-         let ticket=localStorage.getItem("ticket");
+         let ticket=Number(localStorage.getItem("ticket"));
          let fare = ticket*coachp;
+       
          document.getElementById("trainname").innerText = "Train Name : " +name;
          document.getElementById("trainnum").innerText = "Train NO : "+ num;
         document.getElementById("coach").innerText ="Coach : " + coach ;
         document.getElementById("coachp").innerText ="Price(each):   ₹ "+ coachp;
         document.getElementById("ticket").innerText = "Total Ticket : "+ticket;
         document.getElementById("ticketfare").innerText = "Total Fare : ₹"+fare;
-
+if(ticket==0||!ticket){
+        alert("Please Add Passengers again");
+        window.location.href="booking.html";
+       }
         const passengers = JSON.parse(localStorage.getItem("passengers")) || [];
 
   const container = document.getElementById("passengerDetails");
@@ -36,6 +41,14 @@ let name = localStorage.getItem("trainname");
     });
   }
   function booked() {
+
+   
+
+    
+    if (!localStorage.getItem("userData")) {
+       document.getElementById("popupsignup").style.display = "block";
+        return;
+    }
   const trainName = localStorage.getItem("trainname");
   const trainNum = localStorage.getItem("trainnum");
   const coach = localStorage.getItem("coach");
@@ -45,13 +58,13 @@ let name = localStorage.getItem("trainname");
   const passengers = JSON.parse(localStorage.getItem("passengers")) || [];
 const tdate=localStorage.getItem("date");
   const userData = JSON.parse(localStorage.getItem("userData"));
-  const username = userData ? userData.username : "Guest";
+  const username = userData.username;
 const from=localStorage.getItem("fromcity");
 const to=localStorage.getItem("tocity");
-  // Create unique PNR
+
   const pnr = "PNR" + Math.floor(100000 + Math.random() * 900000);
 
-  // Create booking object
+  
   const booking = {
     pnr,
     username,
@@ -66,27 +79,23 @@ const to=localStorage.getItem("tocity");
     to
   };
 
-  // Get all previous bookings or empty array
+  
   const allBookings = JSON.parse(localStorage.getItem("allBookings")) || [];
-
-  // Add the new booking
   allBookings.push(booking);
-
-  // Save updated booking list
   localStorage.setItem("allBookings", JSON.stringify(allBookings));
 
-  // Show success popup
+  
   document.getElementById("popupbook").style.display = "flex";
   confetti({
-        particleCount: 200,
-        spread: 80,
+        particleCount: 500,
+        spread: 100,
         origin: { y: 0.6 }
     });
 }
 
 
 function closePopupBook() {
-  document.getElementById("popupbook").style.display = "none";
+ window.location.href="mybooking.html";
 
 }
 
@@ -96,4 +105,5 @@ window.addEventListener("beforeunload",function(){
     
  
     
-});
+}
+)
