@@ -196,6 +196,6 @@ function showProfile(user) {
     document.getElementById("loginNav").style.display = "none";
     document.getElementById("profileNav").style.display = "block";
 
-    document.getElementById("profilename").innerText = "Name: " + user.name;
-    document.getElementById("profileusername").innerText = "User: " + user.username;
+    document.getElementById("profilename").innerText = "Hii" + user.name;
+    document.getElementById("profileusername").innerText =user.username;
 }
