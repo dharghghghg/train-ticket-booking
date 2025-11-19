@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Login - Railway Management System</title>
+    <style>
+        :root {
+            --primary-blue: #1a4d8f;
+            --secondary-blue: #2563a8;
+            --light-blue: #e6f0ff;
+            --orange: #ff6b35;
+            --dark-text: #1a2332;
+            --light-text: #666;
+            --white: #ffffff;
+            --success-green: #28a745;
+            --danger-red: #dc3545;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            color: var(--dark-text);
+            line-height: 1.6;
+            overflow-x: hidden;
+            background: linear-gradient(135deg, var(--primary-blue), var(--secondary-blue));
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 20px;
+        }
+
+        .admin-login-wrapper {
+            width: 100%;
+            max-width: 450px;
+        }
+
+        .admin-login-container {
+            background: var(--white);
+            padding: 40px;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+            width: 100%;
+        }
+
+        .admin-header {
+            text-align: center;
+            margin-bottom: 30px;
+        }
+
+        .admin-header h1 {
+            color: var(--primary-blue);
+            font-size: 28px;
+            margin-bottom: 10px;
+        }
+
+        .admin-header p {
+            color: var(--light-text);
+            font-size: 14px;
+        }
+
+        .form-group {
+            margin-bottom: 20px;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: 600;
+            color: var(--dark-text);
+        }
+
+        .form-group input {
+            width: 100%;
+            padding: 12px 15px;
+            border: 2px solid #ddd;
+            border-radius: 8px;
+            font-size: 16px;
+            transition: border 0.3s ease;
+        }
+
+        .form-group input:focus {
+            outline: none;
+            border-color: var(--primary-blue);
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 15px 40px;
+            font-size: 18px;
+            font-weight: 600;
+            text-decoration: none;
+            border-radius: 8px;
+            transition: all 0.3s ease;
+            cursor: pointer;
+            border: none;
+            outline: none;
+            width: 100%;
+            text-align: center;
+        }
+
+        .btn-primary {
+            background: var(--orange);
+            color: var(--white);
+        }
+
+        .btn-primary:hover {
+            background: #ff8555;
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(255, 107, 53, 0.4);
+        }
+
+        .message {
+            padding: 15px 20px;
+            border-radius: 8px;
+            margin-bottom: 20px;
+            font-weight: 500;
+            text-align: center;
+        }
+
+        .message-error {
+            background: #f8d7da;
+            color: #721c24;
+            border: 1px solid #f5c6cb;
+        }
+
+        .message-info {
+            background: #d1ecf1;
+            color: #0c5460;
+            border: 1px solid #bee5eb;
+        }
+
+        .back-link {
+            text-align: center;
+            margin-top: 20px;
+        }
+
+        .back-link a {
+            color: var(--primary-blue);
+            text-decoration: none;
+            font-weight: 500;
+        }
+
+        .back-link a:hover {
+            text-decoration: underline;
+        }
+
+        .admin-credentials {
+            background: var(--light-blue);
+            padding: 15px;
+            border-radius: 8px;
+            margin-top: 20px;
+            font-size: 14px;
+        }
+
+        .admin-credentials h4 {
+            color: var(--primary-blue);
+            margin-bottom: 10px;
+        }
+
+        .admin-credentials p {
+            margin-bottom: 5px;
+        }
+    </style>
+</head>
+<body>
+    <div class="admin-login-wrapper">
+        <div class="admin-login-container">
+            <div class="admin-header">
+                <h1>Admin Login</h1>
+                <p>Railway Management System - Admin Panel</p>
+            </div>
+            
+            <div id="errorMessage" class="message message-error" style="display: none;">
+                Invalid admin credentials!
+            </div>
+            
+            <div id="infoMessage" class="message message-info">
+                Enter your admin credentials to access the dashboard
+            </div>
+            
+            <form id="adminLoginForm">
+                <div class="form-group">
+                    <label for="adminUsername">Username</label>
+                    <input type="text" id="adminUsername" placeholder="Enter admin username" required>
+                </div>
+                
+                <div class="form-group">
+                    <label for="adminPassword">Password</label>
+                    <input type="password" id="adminPassword" placeholder="Enter admin password" required>
+                </div>
+                
+                <button type="submit" class="btn btn-primary">Login to Admin Panel</button>
+            </form>
+            
+            <div class="admin-credentials">
+                <h4>Demo Credentials:</h4>
+                <p><strong>Username:</strong> admin</p>
+                <p><strong>Password:</strong> admin123</p>
+            </div>
+            
+            <div class="back-link">
+                <a href="index.html">← Back to Main Website</a>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        document.getElementById('adminLoginForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            const username = document.getElementById('adminUsername').value;
+            const password = document.getElementById('adminPassword').value;
+            
+            // Default admin credentials - separate from user system
+            const adminUsername = "admin";
+            const adminPassword = "admin123";
+            
+            if (username === adminUsername && password === adminPassword) {
+                // Store admin login status in sessionStorage (not localStorage)
+                // This ensures admin logout when browser closes
+                sessionStorage.setItem('adminLoggedIn', 'true');
+                sessionStorage.setItem('adminUsername', username);
+                // Redirect to admin dashboard
+                window.location.href = 'admin-dashboard.html';
+            } else {
+                document.getElementById('errorMessage').style.display = 'block';
+                document.getElementById('infoMessage').style.display = 'none';
+            }
+        });
+
+        // Clear any existing admin session when loading login page
+        sessionStorage.removeItem('adminLoggedIn');
+        sessionStorage.removeItem('adminUsername');
+    </script>
+</body>
+</html>
